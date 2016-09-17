@@ -25,6 +25,7 @@ const matching = [
 const rologic = new Rologic(matching);
 
 rologic.cmd('send Jesse a message').then(res => {
+  console.log('Match', res.match);
   actions[res.fn](res.params);
 }).catch(() => {
   console.log('No matches found :(');
